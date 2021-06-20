@@ -1,4 +1,4 @@
-{% extends 'medtagger/base.html' %}
+{% extends 'base.html' %}
 {% load static %}
 
 {% block body_block %}
@@ -15,7 +15,7 @@
             </tr>
             {% for item in tag_list %}
                 <tr>
-                    <td><a href="{% url 'medtagger:articleDetail' item.id %}">{{ item.id }}</a></td>
+                    <td><a href="{% url 'articleDetails' item.id %}">{{ item.id }}</a></td>
                     <td><a href="https://www.wikidata.org/wiki/{{ item.WikiID }}">{{ item.WikiID }}</a></td>
                     <td>{{ item.Label }}</td>
                     <td>{{ item.Description }}</td>

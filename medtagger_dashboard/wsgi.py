@@ -11,6 +11,10 @@ import os
 
 from django.core.wsgi import get_wsgi_application
 
-os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'medtagger.settings')
+os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'medtagger_dashboard.settings')
+
+from medtagger.downloadArticles import getArticles
+
+#getArticles('catatonic schizophrenia', '50000')
 
 application = get_wsgi_application()

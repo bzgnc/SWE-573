@@ -15,10 +15,13 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
+from . import views
+from medtagger.views import TagAutocomplete
 
 urlpatterns = [
     path('', views.index, name="index"),
-    path('hello', include('accounts.urls')),
-    path('admin/', admin.site.urls),
-    path('accounts/', include('accounts.urls'))
+    path('articleDetails/<int:pk>', views.articleDetails, name='articleDetails'),
+    path('accounts/', include('accounts.urls')),
+    path('tags/', views.tags, name='tags'),
+    path('tag-autocomplete/', TagAutocomplete.as_view(), name='tag-autocomplete'),
 ]
