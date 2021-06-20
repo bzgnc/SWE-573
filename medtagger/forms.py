@@ -3,6 +3,7 @@ from django import forms
 from medtagger.models import Tag, Author
 from dal import autocomplete
 
+
 class TagForm(forms.Form):
     wikiLabel = autocomplete.Select2ListChoiceField(
         widget=autocomplete.ListSelect2(url='tag-autocomplete'),

@@ -119,4 +119,4 @@ def tags(request):
     tags = Tag.objects.all()
 
     return render(request, 'tags.html',
-                  {'tags': tags})
+                  context={'tags': tags})
